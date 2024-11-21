@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+import os
 from groq import Groq
 
 app = Flask(__name__)
