@@ -4,7 +4,7 @@ from groq import Groq
 app = Flask(__name__)
 
 # Configurando o cliente Groq
-client = Groq(api_key='API_KEY')
+client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
 def traduzir_texto(texto):
     # Construindo o prompt para a IA
@@ -15,7 +15,7 @@ def traduzir_texto(texto):
         messages=[
             {
                 "role": "system", 
-                "content": "Você é um tradutor de documentação de linguagem de programação. Sua tarefa é traduzir o texto de forma clara e adaptada ao português brasileiro, sempre presando pela acessibilidade do texto e clareza."
+                "content": "Você é um tradutor de documentação de linguagem de programação. Sua tarefa é traduzir o texto para pt-br de forma que a linguagem fique acessível amigável, sempre presando pela acessibilidade do texto e clareza."
             },
             {
                 "role": "user", 
@@ -47,7 +47,7 @@ def explicar_conceito(traducao_html):
         messages=[
             {
                 "role": "system", 
-                "content": "Você é um assistente técnico especializado em explicar conceitos de programação de forma didática. Sua tarefa é usar analogias simples e exemplos práticos para tornar o conceito acessível."
+                "content": "Você é um assistente técnico especializado em explicar conceitos de programação de forma didática. Sua tarefa é, tendo por base o texto técnico, criar uma explicação didática e detalhada de forma amigável."
             },
             {
                 "role": "user", 
@@ -87,4 +87,4 @@ def explicar():
     return jsonify({'explicacao': explicacao_html})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
