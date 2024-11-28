@@ -1,7 +1,7 @@
 import os
 from groq import Groq
 
-client = Groq(api_key="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")
+client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
 def traduzir_texto(texto):
     prompt = f'Traduza o seguinte texto para português brasileiro de modo que as frases fiquem coerentes e sejam facilmente entendidas. Faça as adaptações necessárias: "{texto}"'
