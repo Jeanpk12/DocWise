@@ -1,0 +1,52 @@
+# Arquivos e pastas gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos e pastas do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+
+# Virtualenv
+venv/
+ENV/
+env/
+*.venv
+
+# Logs e arquivos temporários
+*.log
+*.sqlite3
+*.db
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# Configurações e credenciais sensíveis
+.env
+
+# Arquivos gerados pelo IDE/editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos de pacotes ou dependências
+*.egg-info/
+dist/
+build/
+*.wheel
+
+# Arquivos gerados por testes
+.tox/
+.pytest_cache/
+.coverage
+htmlcov/
+nosetests.xml
+coverage.xml
+
+# Exclusões específicas para o Flask
+instance/
+instance/*
